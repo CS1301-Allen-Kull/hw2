@@ -69,3 +69,19 @@ def tipCalculator():
     #return total cost of meal as a string
     return "${:.2f}".format(totalCost)
 
+def falafel(falafelBalls, hummus, pitaBread):
+    #find out the number of sandwiches each ingredient can make
+    falafelLimit = falafelBalls // 6
+    hummusLimit = hummus // 2
+    pitaLimit = pitaBread
+    
+    #find out which value is smallest
+    if (falafelLimit <= hummusLimit and falafelLimit <= pitaLimit):
+        numSandwiches = falafelLimit
+    elif (hummusLimit < falafelLimit and hummusLimit <= pitaLimit):
+        numSandwiches = hummusLimit
+    else:
+        numSandwiches = pitaLimit
+    
+    #print results of calculation
+    print("With {} falafel balls, {} tablespoons of hummus, and {} pieces of pita bread, you can make a maximum of {} falafels.".format(falafelBalls, hummus, pitaBread, numSandwiches))
