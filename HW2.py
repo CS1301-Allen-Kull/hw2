@@ -57,7 +57,7 @@ def conversionTime(metersPerSecond):
 def tipCalculator():
     #get all initial input from user
     billCost = float(input("How much was your bill before taxes and coupons?\nDo NOT enter a dollar sign"))
-    tipPercent = float(input("What percentage tip would you like to leave?\nInput as a decimal - e.g. 0.15 for 15%"))
+    tipPercent = float(input("What percentage tip would you like to leave?\nDo NOT enter a percentage sign")) / 100
     discount = float(input("How many dollars off is your coupon?\nDo NOT enter a dollar sign"))
     
     #perform complex calculations
