@@ -5,6 +5,8 @@
 # We worked on the homework assignment alone, 
 # using only this semester's course materials.
 
+import math
+
 def square(base):
     # calculate square of 'base' parameter
     result = base ** 2
@@ -24,7 +26,7 @@ def taylorSwift(numFans):
         print("Taylor Swift is done at 11:59 PM.")
         return
     else:
-        print("Taylor Swift is done at " + str(hourFinished) + ":" + str(mins) + " PM.")
+        print("Taylor Swift is done at {}:{:02d} PM.".format(hourFinished, mins))
         return
 
 def girlScoutCookies():
@@ -51,3 +53,19 @@ def conversionTime(metersPerSecond):
 
     #print results of calculation
     print("{:.2f} meters per second is equivalent to {:.2f} miles per hour, {:.2f} feet per second, and {:.2f} kilometers per hour.".format(float(metersPerSecond), float(milesPerHour), float(feetPerSecond), float(kilometersPerHour)))
+    
+def tipCalculator():
+    #get all initial input from user
+    billCost = float(input("How much was your bill before taxes and coupons?\nDo NOT enter a dollar sign"))
+    tipPercent = float(input("What percentage tip would you like to leave?\nInput as a decimal - e.g. 0.15 for 15%"))
+    discount = float(input("How many dollars off is your coupon?\nDo NOT enter a dollar sign"))
+    
+    #perform complex calculations
+    tip = math.ceil(billCost * tipPercent)
+    discountCost = billCost - discount
+    tax = discountCost * 0.08
+    totalCost = discountCost + tip + tax
+    
+    #return total cost of meal as a string
+    return "${:.2f}".format(totalCost)
+
