@@ -38,3 +38,16 @@ def girlScoutCookies():
     
     #print amount of money needed
     print("You still need ${:.2f} to buy those delicious cookies.".format(moneyNeeded))
+
+def conversionTime(metersPerSecond):
+    #calculate feet per second
+    feetPerSecond = metersPerSecond * 3.28084
+
+    #calculate kilometers per hour
+    kilometersPerHour = (metersPerSecond / 1000) * 3600
+
+    #calculate miles per hour
+    milesPerHour = (feetPerSecond / 5280) * 3600
+
+    #print results of calculation
+    print("{:.2f} meters per second is equivalent to {:.2f} miles per hour, {:.2f} feet per second, and {:.2f} kilometers per hour.".format(float(metersPerSecond), float(milesPerHour), float(feetPerSecond), float(kilometersPerHour)))
